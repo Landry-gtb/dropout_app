@@ -64,31 +64,31 @@ Risque(x) = 0.60 × p_RF_comportemental(x) + 0.40 × p_RF_institutionnel(x)
 ┌─────────────────────────────────────────────────────────────────┐
 │                    SYSTÈME D'ALERTE PRÉCOCE                     │
 ├──────────────────────────┬──────────────────────────────────────┤
-│   PARTIE 1               │   PARTIE 2                          │
+│   PARTIE 1               │   PARTIE 2                           │
 │   Dataset Comportemental │   Dataset Institutionnel (UCI)       │
-│   564 obs · 26 features  │   4 424 obs · 34 features           │
-│         ↓                │         ↓                           │
-│   Encodage Ordinal       │   One-Hot Encoding                  │
-│   + One-Hot Encoding     │   (276 features finales)            │
-│         ↓                │         ↓                           │
-│   Split 70/15/15         │   Split 70/15/15                    │
-│   (stratifié)            │   (stratifié)                       │
-│         ↓                │         ↓                           │
-│   StandardScaler         │   [pas de scaling]                  │
-│   (fit sur X_train)      │                                     │
-│         ↓                │         ↓                           │
-│   SMOTE (X_train only)   │   SMOTE (X_train only)              │
-│         ↓                │         ↓                           │
-│   RF Comportemental      │   RF Institutionnel                 │
-│   RandomizedSearchCV     │   RandomizedSearchCV                │
-│   OOB = 0.99             │   OOB = 0.91                        │
-│         ↓                │         ↓                           │
-│   Score p_RF             │   Score p_inst                      │
-│   Seuil = 0.7843         │   Seuil = 0.4307                   │
-│         ↓                │         ↓                           │
+│   564 obs · 26 features  │   4 424 obs · 34 features            │
+│         ↓                │         ↓                            │
+│   Encodage Ordinal       │   One-Hot Encoding                   │
+│   + One-Hot Encoding     │   (276 features finales)             │
+│         ↓                │         ↓                            │
+│   Split 70/15/15         │   Split 70/15/15                     │
+│   (stratifié)            │   (stratifié)                        │
+│         ↓                │         ↓                            │
+│   StandardScaler         │   [pas de scaling]                   │
+│   (fit sur X_train)      │                                      │
+│         ↓                │         ↓                            │
+│   SMOTE (X_train only)   │   SMOTE (X_train only)               │
+│         ↓                │         ↓                            │
+│   RF Comportemental      │   RF Institutionnel                  │
+│   RandomizedSearchCV     │   RandomizedSearchCV                 │
+│   OOB = 0.99             │   OOB = 0.91                         │
+│         ↓                │         ↓                            │
+│   Score p_RF             │   Score p_inst                       │
+│   Seuil = 0.7843         │   Seuil = 0.4307                     │
+│         ↓                │         ↓                            │
 ├──────────────────────────┴──────────────────────────────────────┤
 │              FUSION PONDÉRÉE (60% / 40%)                        │
-│         θ_fusion = (0.7843 + 0.4307) / 2 = 0.6075             │
+│         θ_fusion = (0.7843 + 0.4307) / 2 = 0.6075               │
 │                          ↓                                      │
 │              🔴 ALERTE  /  🟢 SÉCURITÉ                         │
 └─────────────────────────────────────────────────────────────────┘
