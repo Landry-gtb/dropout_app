@@ -225,19 +225,8 @@ Interface web interactive déployée localement sur `localhost:8501`.
 
 ### Aperçu de l'interface
 
-```
-┌─────────────────────────────────────────────────────┐
-│  🎓 Système d'Alerte Précoce                        │
-│  Détection du risque de décrochage académique       │
-├─────────────────────────────────────────────────────┤
-│  📝 Saisie manuelle │ 📁 Import fichier             │
-├──────────┬──────────────────────┬───────────────────┤
-│ ⚖️ Poids │ 🔍 SHAP (comport.)   │ 💡 Recommandations│
-│          │ 🔍 SHAP (instit.)    │                   │
-│ Score RF │                      │ Confiance modèle  │
-│ Score inst│                     │                   │
-└──────────┴──────────────────────┴───────────────────┘
-```
+<img width="1600" height="783" alt="image" src="https://github.com/user-attachments/assets/2386f7f7-507c-4e90-8423-7032c54993c1" />
+
 
 ---
 
@@ -353,7 +342,7 @@ Les modèles sont entraînés sur **Google Colab** et doivent être copiés loca
 ### Entraînement des modèles (Google Colab)
 
 ```
-1. Ouvrir Dropout_Pipeline_Final.ipynb sur Google Colab
+1. Ouvrir Dropout_Pipeline.ipynb sur Google Colab
 2. Monter Google Drive
 3. Placer les datasets dans MyDrive/DROPOUT_TOOLS/
 4. Exécuter les cellules dans l'ordre :
