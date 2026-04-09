@@ -131,7 +131,7 @@ Distribution : 1 421 Dropout (32%) / 3 003 Non-Dropout (68%)
 2. Encodage ordinal (20 variables avec ordre naturel)
 3. One-Hot Encoding (6 variables nominales, drop_first=True)
 4. Split stratifié 70 / 15 / 15
-5. StandardScaler fitté sur X_train uniquement  ← anti-data leakage
+5. StandardScaler fitté sur X_train uniquement  
 6. SMOTE sur X_train post-split et post-scaling
 
 # Institutionnel
@@ -230,7 +230,7 @@ Interface web interactive déployée localement sur `localhost:8501`.
 
 ---
 
-## 📁 Structure du dépôt
+## 📁 Structure du projet
 
 ```
 dropout_app/
