@@ -1,18 +1,3 @@
-"""
-Module de recommandations enrichies — 3 niveaux de sévérité
-À intégrer dans app.py en remplacement de generer_recommandations()
-
-Dimensions couvertes :
-  - Psychologique  (fatigue, stress, motivation, confiance)
-  - Académique     (moyenne, absences, devoirs, matières échouées)
-  - Organisationnel (procrastination, heures d'étude)
-  - Socio-économique (logement, soutien, trajet, environnement, LMS)
-
-Logique de sévérité par feature :
-  - SHAP value faible  (0.0 < v ≤ 0.05) → niveau LÉGER
-  - SHAP value moyenne (0.05 < v ≤ 0.15) → niveau MODÉRÉ
-  - SHAP value forte   (v > 0.15)         → niveau SÉVÈRE
-"""
 
 # ─────────────────────────────────────────────────────────
 # CATALOGUE DES RECOMMANDATIONS
@@ -339,7 +324,7 @@ def _dim_from_feature(feat_lower: str) -> str | None:
 
 
 # ─────────────────────────────────────────────────────────
-# FONCTION PRINCIPALE — À brancher dans app.py
+# FONCTION PRINCIPALE 
 # ─────────────────────────────────────────────────────────
 def generer_recommandations(sv, feature_names: list, max_recos: int = 4) -> list[dict]:
     """
@@ -371,11 +356,11 @@ def generer_recommandations(sv, feature_names: list, max_recos: int = 4) -> list
     )
 
     recos      = []
-    dims_vus   = set()   # éviter les doublons par dimension
+    dims_vus   = set()   
 
     for shap_val, feat in sorted_pairs:
         if shap_val <= 0:
-            break          # on ne traite que les features qui augmentent le risque
+            break         
 
         dim = _dim_from_feature(feat.lower())
         if dim is None or dim in dims_vus:
@@ -410,7 +395,7 @@ def generer_recommandations(sv, feature_names: list, max_recos: int = 4) -> list
 
 
 # ─────────────────────────────────────────────────────────
-# COULEURS HTML PAR NIVEAU (pour l'affichage dans app.py)
+# COULEURS HTML PAR NIVEAU 
 # ─────────────────────────────────────────────────────────
 COULEURS_NIVEAU = {
     'léger':  {'bg': 'linear-gradient(135deg,#fffbf0,#fff8e8)', 'border': '#c9a84c', 'badge': '#c9a84c'},
