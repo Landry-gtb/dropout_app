@@ -10,8 +10,6 @@
 
 **Fusion pondérée de deux modèles Random Forest — Données comportementales + Données institutionnelles**
 
-*Master Systèmes Intelligents et Multimédia — Vietnam National University, Hanoi (VNU)*
-
 </div>
 
 ---
@@ -238,7 +236,7 @@ dropout_app/
 ├── app.py                          # Application Streamlit principale
 ├── lancer_app.sh                   # Script de démarrage WSL2/Linux
 ├── requirements.txt                # Dépendances Python
-├── README.md                       # Ce fichier
+├── README.md                       
 │
 ├── models/
 │   ├── RF_Project/
@@ -405,8 +403,6 @@ Les modèles sont entraînés sur **Google Colab** et doivent être copiés loca
 
 **IRUMVA Landry (Landros)**
 - GitHub : [@Landry-gtb](https://github.com/Landry-gtb)
-- Programme : Master Systèmes Intelligents et Multimédia (SIM)
-- Institution : Vietnam National University — Hanoi (VNU)
 
 ---
 
