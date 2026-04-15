@@ -1,7 +1,6 @@
 #!/bin/bash
 # ─────────────────────────────────────────────────────
 # Script de lancement — Système d'Alerte Précoce
-# À exécuter dans WSL2/Linux : bash lancer_app.sh
 # ─────────────────────────────────────────────────────
 
 APP_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
